@@ -12,4 +12,5 @@ Following are the changes made to the above module.(Change Logs)<br>
 [3] Make the module working for Joomla version 3.1<br>
 [4] Remove Redundant Pin Configuration Section<br>
 [5] Make the Height of the Map Configurable<br>
-[6] Make the marker always apperar in the center of the map.
+[6] Make the marker always apperar in the center of the map.<br>
+[7] Changed the field type of the 'Zoom Level' field

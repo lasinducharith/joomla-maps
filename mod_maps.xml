@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+    type="module"
+    version="3.1"
+    client="site"
+    method="upgrade">
+    <name>Maps View</name>
+    <author>Joomla! Project</author>
+    <creationDate>April 2012</creationDate>
+    <copyright>Copyright (C) 2005 - 2012 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>admin@joomla.org</authorEmail>
+    <authorUrl>www.joomla.org</authorUrl>
+    <version>3.1.0</version>
+    <description>MOD_MAPS_INFO_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_maps">mod_maps.php</filename>
+        <folder>tmpl</folder>
+        <folder>language</folder>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <filename>mod_maps.xml</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_maps.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_maps.sys.ini</language>
+    </languages>
+    <help key="Maps View" />
+    <config>
+        <fields name="params">
+			<fieldset name="mapConfig" label="MOD_MAP">
+			<field
+					name="zoom"
+					type="integer"
+					default="12"
+					first="1"
+					last="18"
+					step="1"
+					label="MOD_MAP_ZOOM"
+					description="MOD_MAP_ZOOM_DESC">
+				</field>
+				<field type="list" name="layer" default="osm" label="MOD_MAP_LAYER" description="MOD_MAP_LAYER_DESC">
+  					<option value="osm">Open Street Maps</option>
+  					<option value="gmaps">Google Maps</option>
+				</field>
+
+				
+				<field type="radio" name="centerType" default="0" label="MOD_MAP_CENTER" description="MOD_MAP_CENTER_DESC">
+					<option value="0">LON_LAT_BASED</option>
+  					<option value="1">GEO_LOCATION_BASED</option>					
+				</field>
+				<field type="text" name="centerLon" label="MOD_MAP_CENTER_LON" description="MOD_MAP_CENTER_LON_DESC" default="80.316633"/>
+				<field type="text" name="centerLat" label="MOD_MAP_CENTER_LAT" description="MOD_MAP_CENTER_LAT_DESC" default="5.560715"/>
+				<field type="text" name="centerGeo" label="MOD_MAP_CENTER_GEOLOCATION" description="MOD_MAP_CENTER_GEOLOCATION_DESC"/>
+				<field type="text" name="mapHeight" label="MOD_MAP_HEIGHT" description="MOD_MAP_HEIGHT_DESC" default="250px"/>
+			</fieldset>
+
+
+			<!-- Popup Text -->
+			<fieldset name="popoupConfig" label="MOD_MAP_POPUPS">
+				<field type="editor" name="popuptext"  default="" label="MOD_MAP_POPUPTEXT" description="MOD_MAP_POPUPTEXT_DESC" filter="safehtml"/>
+			</fieldset>
+            
+
+            
+            <fieldset
+                name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+                <field
+                    name="moduleclass_sfx"
+                    type="text"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field
+                    name="cache"
+                    type="list"
+                    default="1"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option
+                        value="1">JGLOBAL_USE_GLOBAL
+                    </option>
+                    <option
+                        value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+                    </option>
+                </field>
+                <field
+                    name="cache_time"
+                    type="text"
+                    default="900"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                    description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                <field
+                    name="cachemode"
+                    type="hidden"
+                    default="static">
+                    <option
+                        value="static">
+                    </option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
